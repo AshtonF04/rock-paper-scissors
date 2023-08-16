@@ -45,6 +45,7 @@ function startRound(playerChoice, computerChoice){
    }
 }
 
+//Function to begin a 5 round game loop
 function game(){
     let playerScore = 0
     let computerScore = 0
