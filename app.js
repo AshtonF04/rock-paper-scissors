@@ -1,3 +1,4 @@
+
 //Function to randomly generate the computers choice
 function getComputerChoice(){
     let rand = Math.floor(Math.random() * 3) + 1
@@ -16,18 +17,10 @@ function getComputerChoice(){
     }
 }
 
-//Function to take input for the player choice
-function getPlayerChoice(){
-    let choice = prompt("Enter 'Rock', 'Paper', or 'scissors'").toLowerCase()
-    if (choice == "rock" || choice == "paper" || choice == "scissors"){
-        return choice
-    } else {
-        return null
-    }
-}
-
 //Function to begin round and determine winner
-function startRound(playerChoice, computerChoice){
+function getWinner(playerChoice){
+    let computerChoice = getComputerChoice()
+
     if (playerChoice == null || computerChoice == null){
         console.log("Error Generating Choices")
         return
@@ -45,40 +38,10 @@ function startRound(playerChoice, computerChoice){
    }
 }
 
-//Function to begin a 5 round game loop
-function game(){
-    let playerScore = 0
-    let computerScore = 0
+function main(){
+    const div_list = Array.from(document.querySelectorAll(".button"))
 
-    for (i = 0; i < 5; i++){
-        let playerChoice = getPlayerChoice()
-        let computerChoice = getComputerChoice()
-
-        let winner = startRound(playerChoice, computerChoice)
-
-        switch(winner){
-            case 'player':
-                playerScore += 1
-                console.log(`You win! ${playerChoice} beats ${computerChoice}`)
-                break
-
-            case 'computer':
-                computerScore += 1
-                console.log(`You lose. ${computerChoice} beats ${playerChoice}`)
-                break
-
-            case 'draw':
-                console.log('It was a draw!')
-        }
-    }
-
-    if(playerScore > computerScore) {
-        console.log(`The score is ${playerScore} - ${computerScore}, you win!`)
-    } else if (computerScore > playerScore){
-        console.log(`The score is ${computerScore} - ${playerScore}, you lose!`)
-    } else {
-        console.log(`The score is ${computerScore} - ${playerScore}, it's a draw!`)
-    }
+    div_list.forEach((curr_div) => {curr_div.addEventListener('click', () => console.log("button Clicked"))})
 }
 
-game()
+main()
