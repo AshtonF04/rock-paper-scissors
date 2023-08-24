@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Ashton's RPS</title>
-        <meta charset="utf-8">
-
         <script src="app.js" defer></script>
         <link href="styles.css" rel="stylesheet">
+
+        <meta charset="utf-8">
+        <title>Ashton's RPS</title>
     </head>
     <body>
         <div class="title-div">
             <h1>ROCK PAPER SCISSORS, SHOOT!</h1>
         </div>
         <div class="score-div">
-            <h2>You win, rock beats scissors!</h2>
-            <h2>0 - 0</h2>
+            <h2 id="winner_text">You win, rock beats scissors!</h2>
+            <h2 id="score_text">0 - 0</h2>
         </div>
-        <div class="button-div">
-            <div class="button">
-                ROCK
+        <div class="center-div">
+            <div class="button-div">
+                <div class="button">
+                    ROCK
+                </div>
+                <div class="button">
+                    PAPER
+                </div>
+                <div class="button">
+                    SCISSORS
+                </div>
             </div>
-            <div class="button">
-                PAPER
+            <div class="tip-div">
+                (Click an above button to make a selection!)
             </div>
-            <div class="button">
-                SCISSORS
-            </div>
-        </div>
-        <div class="tip-div">
-            (Click an above button to make a selection!)
         </div>
     </body>
 </html>
